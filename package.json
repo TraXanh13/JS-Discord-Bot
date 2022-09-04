@@ -1,13 +1,10 @@
 {
   "dependencies": {
-<<<<<<< HEAD
+    "@discordjs/rest": "^1.1.0",
     "discord.js": "^14.3.0",
     "dotenv": "^16.0.2"
-=======
-    "discord.js": "^14.3.0"
   },
   "devDependencies": {
     "eslint": "^8.23.0"
->>>>>>> db38d78817256fb5ffe0b9f6a49ed7ed2cf92e71
   }
 }
