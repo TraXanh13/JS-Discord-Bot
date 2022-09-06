@@ -13,6 +13,12 @@ const commands = [
 
 const rest = new REST({ version: '10' }).setToken(process.env.DISCORD_TOKEN);
 
+// Delete all commands globally
+// rest.put(Routes.applicationCommands(process.env.CLIENT_ID), { body: [] })
+// 	.then(() => console.log('Successfully deleted all application commands.'))
+// 	.catch(console.error);
+
+// Include commands globally
 rest.put(Routes.applicationCommands(process.env.CLIENT_ID), { body: commands })
 	.then((data) => console.log(`Successfully registered ${data.length} application commands.`))
 	.catch(console.error);
