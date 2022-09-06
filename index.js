@@ -27,5 +27,22 @@ client.once('ready', () => {
 	console.log('Ready!');
 });
 
+// Runs when a slash command is called
+client.on('interactionCreate', async interaction => {
+	if (!interaction.isChatInputCommand()) return;
+
+	const command = client.commands.get(interaction.commandName);
+
+	// Break if it isn't an existing command
+	if (!command) return;
+
+	try {
+		await command.execute(interaction);
+	} catch (error) {
+		console.error(error);
+		await interaction.reply({ content: 'The command didn\'t work! ಥ_ಥ', ephemeral: true });
+	}
+});
+
 // Login to Discord with your client's token
 client.login(process.env.DISCORD_TOKEN);
